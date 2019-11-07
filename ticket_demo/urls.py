@@ -32,4 +32,5 @@ urlpatterns = [
     path('addnotes/<int:id>', views.addnotes),
     path('notesupdate/<int:id>', views.notesupdate),
     path('viewnotes/<int:id>', views.viewnotes),
+    path('logout',views.logout),
 ]

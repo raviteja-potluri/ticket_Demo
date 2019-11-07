@@ -147,3 +147,8 @@ def login_user(request):
                           {'invalidusername': True})
     else:
         return HttpResponse("Request Method is Not POST")
+
+def logout(request):
+    request.session['authenticated']=False
+    request.session['username']= ''
+    return redirect('/')
