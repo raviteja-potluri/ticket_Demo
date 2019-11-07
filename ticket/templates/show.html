@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Records</title>
+     {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+</head>
+<body>
+  <table id="example" class="table table-striped table-bordered" style="width:100%">
+      <thead>
+          <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Phone</th>
+              <th>City</th>
+              <th>State</th>
+              <th>Description</th>
+              <th>Notes</th>
+              <th>Category</th>
+              <th>Status</th>
+              <th>Creation Date</th>
+              <th>Updation Date</th>
+
+          </tr>
+      </thead>
+    <tbody>
+{% for record in data %}
+    <tr>
+        <td>{{ record.name }}</td>
+        <td>{{ record.email }}</td>
+        <td>{{ record.phone }}</td>
+        <td>{{ record.city }}</td>
+        <td>{{ record.state }}</td>
+        <td>{{ record.ticket_desc }}</td>
+        <td>{{ record.notes }}</td>
+        <td>{{ record.ticket_category }}</td>
+        <td>{{ record.status }}</td>
+        <td>{{ record.creation_date }}</td>
+        <td>{{ record.updation_date }}</td>
+        <td>
+            <a href="/addnotes/{{ record.ticketid }}">Add Notes</a>
+            <a href="/viewnotes/{{ record.ticketid }}">View Notes</a>
+            <a href="/edit/{{record.ticketid}}"><span class="glyphicon glyphicon-pencil" >Edit</span></a>
+            <a href="/delete/{{ record.ticketid }}">Delete</a>
+        </td>
+    </tr>
+{% endfor %}
+    </tbody>
+</table>
+<br>
+<br>
+<center><a href="/ticket" class="btn btn-primary">Add New Record</a></center>
+</body>
+</html>

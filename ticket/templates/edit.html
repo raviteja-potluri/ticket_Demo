@@ -1,0 +1,234 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+</head>
+<body>
+<form method="POST" class="post-form" action="/update/{{record.ticketid}}">
+        {% csrf_token %}
+    <div class="container">
+<br>
+    <div class="form-group row">
+    <label class="col-sm-1 col-form-label"></label>
+    <div class="col-sm-4">
+    <h3>Update Details</h3>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Name:</label>
+    <div class="col-sm-4">
+        <input type="text" name="name" id="name" required maxlength="100" value="{{ record.name }}" />
+    </div>
+  </div>
+    <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Email:</label>
+    <div class="col-sm-4">
+        <input type="email" name="email" id="email" required maxlength="254" value="{{ record.email }}" />
+    </div>
+  </div>
+    <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Phone:</label>
+    <div class="col-sm-4">
+        <input type="text" name="phone" id="phone" required maxlength="15" value="{{ record.phone }}" />
+    </div>
+  </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label">City:</label>
+  <div class="col-sm-4">
+      <input type="text" name="city" id="city" required maxlength="15" value="{{ record.city }}" />
+  </div>
+</div>
+<div class="form-group row">
+<label class="col-sm-2 col-form-label">State:</label>
+<div class="col-sm-4">
+    <input type="text" name="state" id="state" required maxlength="15" value="{{ record.state }}" />
+</div>
+</div>
+<div class="form-group row">
+<label class="col-sm-2 col-form-label">Description:</label>
+<div class="col-sm-4">
+    <input type="text" name="description" id="description" required maxlength="15" value="{{ record.ticket_desc }}" />
+</div>
+</div>
+<div class="form-row">
+    <div class="name">Ticket Category</div>
+    <div class="value">
+        <div class="input-group">
+            <div class="rs-select2 js-select-simple select--no-search">
+                <select name="category">
+                    <option disabled="disabled" selected="selected">Choose option</option>
+                    <option>Technical</option>
+                    <option>Billing</option>
+                    <option>Service</option>
+                </select>
+                <div class="select-dropdown"></div>
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="form-group row">
+    <label class="col-sm-1 col-form-label"></label>
+    <div class="col-sm-4">
+    <button type="submit" class="btn btn-success">Update</button>
+    </div>
+  </div>
+    </div>
+</form>
+</body>
+</html>
+
+ -->
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: black;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Add padding to containers */
+.container {
+  padding: 16px;
+  background-color: white;
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Overwrite default styles of hr */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* Set a style for the submit button */
+.registerbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.registerbtn:hover {
+  opacity: 1;
+}
+
+/* Add a blue text color to links */
+a {
+  color: dodgerblue;
+}
+
+/* Set a grey background color and center the text of the "sign in" section */
+.signin {
+  background-color: #f1f1f1;
+  text-align: center;
+}
+</style>
+</head>
+<body>
+
+  <form method="POST" class="post-form" action="/update/{{record.ticketid}}">
+          {% csrf_token %}
+      <div class="container">
+  <br>
+      <div class="form-group row">
+      <label class="col-sm-1 col-form-label"></label>
+      <div class="col-sm-4">
+      <h3>Update Details</h3>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-sm-2 col-form-label">Name:</label>
+      <div class="col-sm-4">
+          <input type="text" name="name" id="name" required maxlength="100" value="{{ record.name }}" />
+      </div>
+    </div>
+      <div class="form-group row">
+      <label class="col-sm-2 col-form-label">Email:</label>
+      <div class="col-sm-4">
+          <input type="email" name="email" id="email" required maxlength="254" value="{{ record.email }}" />
+      </div>
+    </div>
+      <div class="form-group row">
+      <label class="col-sm-2 col-form-label">Phone:</label>
+      <div class="col-sm-4">
+          <input type="text" name="phone" id="phone" required maxlength="15" value="{{ record.phone }}" />
+      </div>
+    </div>
+    <div class="form-group row">
+    <label class="col-sm-2 col-form-label">City:</label>
+    <div class="col-sm-4">
+        <input type="text" name="city" id="city" required maxlength="15" value="{{ record.city }}" />
+    </div>
+  </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label">State:</label>
+  <div class="col-sm-4">
+      <input type="text" name="state" id="state" required maxlength="15" value="{{ record.state }}" />
+  </div>
+  </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label">Description:</label>
+  <div class="col-sm-4">
+      <input type="text" name="description" id="description" required maxlength="15" value="{{ record.ticket_desc }}" />
+  </div>
+  </div>
+  <div class="form-row">
+      <div class="name">Ticket Category</div>
+      <div class="value">
+          <div class="input-group">
+              <div class="rs-select2 js-select-simple select--no-search">
+                  <select name="category">
+                      <option disabled="disabled" selected="selected">Choose option</option>
+                      <option>Technical</option>
+                      <option>Billing</option>
+                      <option>Service</option>
+                  </select>
+                  <div class="select-dropdown"></div>
+              </div>
+          </div>
+      </div>
+  </div>
+      <div class="form-group row">
+      <label class="col-sm-1 col-form-label"></label>
+      <div class="col-sm-4">
+      <button type="submit" class="btn btn-success">Update</button>
+      </div>
+    </div>
+      </div>
+  </form>
+</body>
+</html>
